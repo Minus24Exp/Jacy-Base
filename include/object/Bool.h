@@ -3,15 +3,18 @@
 
 #include "object/Object.h"
 
+extern class_ptr cBool;
+
 class Bool : public Object {
 public:
-    Bool(bool value) : value(value) {}
-    virtual ~Bool() = default;
+    explicit Bool(bool value) : Object(cBool), value(value) {}
+    ~Bool() override = default;
+
 private:
     bool value;
 };
 
-const Value FalseConst = Value{Type::Bool, std::make_shared<Bool>(false)};
-const Value TrueConst = Value{Type::Bool, std::make_shared<Bool>(true)};
+const std::shared_ptr<Bool> FalseConst = std::make_shared<Bool>(false);
+const std::shared_ptr<Bool> TrueConst = std::make_shared<Bool>(true);
 
 #endif

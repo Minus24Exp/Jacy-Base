@@ -1,28 +1,32 @@
 #ifndef STRING_H
 #define STRING_H
 
+#include <utility>
 #include "object/Object.h"
 
 class String;
 using string_ptr = std::shared_ptr<String>;
 
+extern class_ptr cString;
+
 class String : public Object {
 public:
-    String(const char * value) : value(value) {}
-    virtual ~String() = default;
+    explicit String(std::string value) : Object(cString), value(std::move(value)) {}
+    ~String() override = default;
 
 private:
-    const char * value;
+    std::string value;
 };
 
-const std::map<const char*, string_ptr> string_table;
-
-string_ptr make_string(const char * value) {
-    if (string_table.find(value) != string_table.end()) {
-        return string_table.at(value);
+// Constants //
+std::map<std::string, string_ptr> string_constants;
+static inline string_ptr make_string(const std::string & value) {
+    const auto & found = string_constants.find(value);
+    if (found != string_constants.end()) {
+        return found->second;
     }
-
-    return string_table[value] = std::make_shared<String>(value);
+    string_constants.emplace(value, std::make_shared<String>(value));
+    return string_constants.at(value);
 }
 
 #endif

@@ -1,46 +1,27 @@
-#ifndef COMPILER_H
-#define COMPILER_H
+#ifndef INTERPRETER_H
+#define INTERPRETER_H
 
-#include <cstring>
-#include <cstdint>
-#include "tree/nodes.h"
 #include "tree/BaseVisitor.h"
-#include "compiler/opcode.h"
-#include "vm/Value.h"
 #include "Exception.h"
+#include "tree/nodes.h"
+#include "interpreter/Scope.h"
 #include "object/objects.h"
-#include "compiler/Scope.h"
 
-class Compiler : public BaseVisitor {
+class Interpreter : public BaseVisitor {
 public:
-    Compiler();
-    virtual ~Compiler() = default;
-
-    scope_ptr compile(const StmtList & tree);
+    Interpreter();
+    ~Interpreter() override = default;
 
 private:
-    int scope_depth;
-    func_ptr func;
-    scope_ptr current_scope;
+    // Value //
+    Value value;
 
-    uint64_t add_const(const Value & value);
-    uint64_t make_const(const Value & value);
-    void emit_const(const Value & value);
-
-    uint64_t resolve_local(const scope_ptr & scope, std::string name);
-    uint64_t resolve_upvalue(const scope_ptr & scope, std::string name);
-    uint64_t add_upvalue(const scope_ptr & scope, uint64_t index, bool is_local);
-
+    // Scope //
+    scope_ptr scope;
     void enter_scope();
     void exit_scope();
 
-    void emit(uint8_t byte);
-    void emit(OpCode opcode);
-    void emit(const uint8_t * byte_array, int size);
-    void emit(uint16_t s);
-    void emit(uint32_t i);
-    void emit(uint64_t l);
-
+public:
     // Statements //
     void visit(ExprStmt * expr_stmt) override;
     void visit(Block * block) override;
@@ -68,7 +49,8 @@ private:
     void visit(SetItem * set_item) override;
     void visit(DictExpr * dict) override;
 
-    void error(const std::string & msg);
+    // Errors //
+    void error(const std::string & msg, Node * node);
 };
 
 #endif
