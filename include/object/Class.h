@@ -4,6 +4,7 @@
 #include "object/Object.h"
 
 class_ptr get_cClass();
+void reg_cClass(const scope_ptr & global);
 
 class Class : public Object {
 public:

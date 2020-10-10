@@ -5,6 +5,7 @@ class_ptr get_cClass() {
     return cClass;
 }
 
-void register_cClass(scope_ptr global) {
-
+void reg_cClass(const scope_ptr & global) {
+    const class_ptr & cClass = get_cClass();
+    global->add("Class", Local{VarDeclKind::Val, cClass});
 }

@@ -23,10 +23,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Save">
-      <change afterPath="$PROJECT_DIR$/src/object/Func.cpp" afterDir="false" />
+    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Using static getters for classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/interpreter/Scope.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Scope.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Bool.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Bool.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Class.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Class.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Float.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Float.h" afterDir="false" />
@@ -35,11 +34,15 @@
       <change beforePath="$PROJECT_DIR$/include/object/Null.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Null.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Object.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/String.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/String.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/object/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Bool.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Bool.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Class.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Float.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Func.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Func.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Object.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/String.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/String.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +103,7 @@
       <updated>1602263600901</updated>
       <workItem from="1602263603476" duration="18000" />
       <workItem from="1602263645246" duration="12856000" />
-      <workItem from="1602331316146" duration="6690000" />
+      <workItem from="1602331316146" duration="8369000" />
     </task>
     <task id="LOCAL-00001" summary="Save">
       <created>1602340548449</created>
@@ -109,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602340548450</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Using static getters for classes">
+      <created>1602341439689</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602341439689</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +139,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Save" />
-    <option name="LAST_COMMIT_MESSAGE" value="Save" />
+    <MESSAGE value="Using static getters for classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using static getters for classes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602338652283">
@@ -144,6 +155,10 @@
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="781" y="170" key="SettingsEditor/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602276614741" />
+    <state x="872" y="254" key="Vcs.Push.Dialog.v2" timestamp="1602341454945">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="872" y="254" key="Vcs.Push.Dialog.v2/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602341454945" />
     <state x="936" y="243" key="run.anything.popup" timestamp="1602277279687">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>

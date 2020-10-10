@@ -7,6 +7,7 @@ class Float;
 using float_ptr = std::shared_ptr<Float>;
 
 class_ptr get_cFloat();
+void reg_cFloat(const scope_ptr & global);
 
 class Float : public Object {
 public:

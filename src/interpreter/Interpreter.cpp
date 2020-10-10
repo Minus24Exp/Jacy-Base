@@ -1,7 +1,17 @@
 #include "interpreter/Interpreter.h"
 
 Interpreter::Interpreter() {
+    // Enter global scope
     enter_scope();
+
+    // Register common classes in global scope
+    reg_cNull(scope);
+    reg_cBool(scope);
+    reg_cInt(scope);
+    reg_cFloat(scope);
+    reg_cString(scope);
+    reg_cClass(scope);
+    reg_cFunc(scope);
 }
 
 void Interpreter::interpret(const StmtList & tree) {

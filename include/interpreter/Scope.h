@@ -2,7 +2,8 @@
 #define SCOPE_H
 
 #include <utility>
-
+#include <vector>
+#include "tree/Stmt/VarDecl.h"
 #include "object/Value.h"
 
 class Scope;

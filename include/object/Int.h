@@ -7,6 +7,7 @@ class Int;
 using int_ptr = std::shared_ptr<Int>;
 
 class_ptr get_cInt();
+void reg_cInt(const scope_ptr & global);
 
 class Int : public Object {
 public:

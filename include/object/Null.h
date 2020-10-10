@@ -4,6 +4,7 @@
 #include "object/Object.h"
 
 class_ptr get_cNull();
+void reg_cNull(const scope_ptr & global);
 
 class Null : public Object {
 public:

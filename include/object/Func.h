@@ -7,6 +7,7 @@ class Func;
 using func_ptr = std::shared_ptr<Func>;
 
 class_ptr get_cFunc();
+void reg_cFunc(const scope_ptr & global);
 
 struct Param {
     std::string name;

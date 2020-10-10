@@ -8,6 +8,7 @@ class String;
 using string_ptr = std::shared_ptr<String>;
 
 class_ptr get_cString();
+void reg_cString(const scope_ptr & global);
 
 class String : public Object {
 public:
