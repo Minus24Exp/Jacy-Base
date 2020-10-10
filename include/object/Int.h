@@ -21,14 +21,7 @@ private:
 };
 
 // Constants //
-std::map<long long, int_ptr> int_constants;
-static inline int_ptr make_int(long long value) {
-    const auto & found = int_constants.find(value);
-    if (found != int_constants.end()) {
-        return found->second;
-    }
-    int_constants.emplace(value, std::make_shared<Int>(value));
-    return int_constants.at(value);
-}
+extern std::map<long long, int_ptr> int_constants;
+int_ptr make_int(long long value);
 
 #endif

@@ -12,6 +12,7 @@
 #include "parser/Parser.h"
 #include "tree/Printer.h"
 #include "Tester.h"
+#include "interpreter/Interpreter.h"
 
 /**
  * Jacy
@@ -60,6 +61,7 @@ private:
 
     Lexer & lexer;
     Parser & parser;
+    Interpreter interpreter;
 
     /**
      * @brief Run REPL

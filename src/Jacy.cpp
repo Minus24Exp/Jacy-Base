@@ -123,7 +123,12 @@ void Jacy::run_debug(const std::string & script) {
     std::cout << "\nParse Tree:" << std::endl;
     printer.print(tree);
     std::cout << std::endl;
-        
+
+    // Interpret
+    auto ip_start = bench();
+    interpreter.interpret(tree);
+    auto ip_end = bench();
+
     std::cout << "\n\nBenchmarks:" << std::endl;
 
     auto lexer_duration = std::chrono::duration<double>(lexer_end - lexer_start).count();
@@ -131,4 +136,7 @@ void Jacy::run_debug(const std::string & script) {
 
     auto parser_duration = std::chrono::duration<double>(parser_end - parser_start).count();
     std::cout << "Parsing: " << parser_duration << "s" << std::endl;
+
+    auto ip_duration = std::chrono::duration<double>(ip_end - ip_start).count();
+    std::cout << "Evaluation: " << ip_duration << "s" << std::endl;
 }

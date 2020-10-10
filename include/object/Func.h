@@ -2,6 +2,7 @@
 #define FUNC_H
 
 #include "object/Object.h"
+#include "tree/Stmt/Block.h"
 
 class Func;
 using func_ptr = std::shared_ptr<Func>;

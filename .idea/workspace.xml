@@ -23,25 +23,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Using static getters for classes">
+    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Register global classes">
+      <change afterPath="$PROJECT_DIR$/src/object/Null.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/interpreter/Scope.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Scope.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Bool.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Bool.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Class.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Class.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Jacy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Jacy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Float.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Float.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Func.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Int.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Int.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Null.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Null.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Object.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/String.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/String.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Bool.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Bool.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Class.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/script.jc" beforeDir="false" afterPath="$PROJECT_DIR$/sample/script.jc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Jacy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jacy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Float.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Func.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Func.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Object.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/String.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/String.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +76,7 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
+    <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-debug sample/script.jc" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -103,7 +97,7 @@
       <updated>1602263600901</updated>
       <workItem from="1602263603476" duration="18000" />
       <workItem from="1602263645246" duration="12856000" />
-      <workItem from="1602331316146" duration="8369000" />
+      <workItem from="1602331316146" duration="10713000" />
     </task>
     <task id="LOCAL-00001" summary="Save">
       <created>1602340548449</created>
@@ -119,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602341439689</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Register global classes">
+      <created>1602343363008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602343363008</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,9 +141,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Save" />
     <MESSAGE value="Using static getters for classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Using static getters for classes" />
+    <MESSAGE value="Register global classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register global classes" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="734" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602345930424">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="734" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602345930424" />
     <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602338652283">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
@@ -151,6 +157,22 @@
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="92" y="92" width="2376" height="866" key="DiffContextDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602276940850" />
+    <state width="2517" height="278" key="GridCell.Tab.0.bottom" timestamp="1602346722591">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="278" key="GridCell.Tab.0.bottom/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602346722591" />
+    <state width="2517" height="278" key="GridCell.Tab.0.center" timestamp="1602346722591">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="278" key="GridCell.Tab.0.center/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602346722591" />
+    <state width="2517" height="278" key="GridCell.Tab.0.left" timestamp="1602346722591">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="278" key="GridCell.Tab.0.left/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602346722591" />
+    <state width="2517" height="278" key="GridCell.Tab.0.right" timestamp="1602346722591">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="278" key="GridCell.Tab.0.right/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602346722591" />
     <state x="781" y="170" key="SettingsEditor" timestamp="1602276614741">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
@@ -163,9 +185,9 @@
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="936" y="243" key="run.anything.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602277279687" />
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602341362502">
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602345828585">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602341362502" />
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602345828585" />
   </component>
 </project>

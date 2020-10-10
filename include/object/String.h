@@ -22,14 +22,7 @@ private:
 };
 
 // Constants //
-std::map<std::string, string_ptr> string_constants;
-static inline string_ptr make_string(const std::string & value) {
-    const auto & found = string_constants.find(value);
-    if (found != string_constants.end()) {
-        return found->second;
-    }
-    string_constants.emplace(value, std::make_shared<String>(value));
-    return string_constants.at(value);
-}
+extern std::map<std::string, string_ptr> string_constants;
+string_ptr make_string(const std::string & value);
 
 #endif
