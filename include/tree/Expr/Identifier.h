@@ -11,6 +11,7 @@ struct Identifier : Expr {
     Token token;
 
     explicit Identifier(const Token & token) : Expr(token.pos, ExprType::Id), token(token) {}
+    ~Identifier() override = default;
 
     std::string get_name() {
         return token.String();

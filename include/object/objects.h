@@ -6,5 +6,6 @@
 #include "object/Int.h"
 #include "object/Float.h"
 #include "object/String.h"
+#include "object/Func.h"
 
 #endif

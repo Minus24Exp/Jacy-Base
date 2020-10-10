@@ -7,6 +7,8 @@ extern class_ptr cNull;
 
 class Null : public Object {
 public:
+    ObjType type = ObjType::Null;
+
     Null() : Object(cNull) {}
     ~Null() override = default;
 

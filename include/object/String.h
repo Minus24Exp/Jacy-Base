@@ -11,6 +11,8 @@ extern class_ptr cString;
 
 class String : public Object {
 public:
+    ObjType type = ObjType::String;
+
     explicit String(std::string value) : Object(cString), value(std::move(value)) {}
     ~String() override = default;
 

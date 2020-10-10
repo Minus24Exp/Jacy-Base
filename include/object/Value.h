@@ -18,9 +18,4 @@ enum class ObjType {
     Class,
 };
 
-struct Value {
-    ObjType tag;
-    obj_ptr obj;
-};
-
 #endif

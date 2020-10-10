@@ -10,6 +10,8 @@ extern class_ptr cInt;
 
 class Int : public Object {
 public:
+    ObjType type = ObjType::Int;
+
     explicit Int(long long value) : Object(cInt), value(value) {}
     ~Int() override = default;
 

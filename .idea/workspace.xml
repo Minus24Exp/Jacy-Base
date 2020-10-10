@@ -24,26 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Jacy-Base.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/interpreter/Interpreter.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/interpreter/Scope.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/object/Value.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/object/Class.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Bool.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Class.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/Object.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/String.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Jacy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Jacy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/compiler/Compiler.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/compiler/Scope.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/compiler/opcode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/interpreter/Interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Interpreter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/interpreter/Scope.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Scope.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Bool.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Bool.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Float.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Float.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Func.h" afterDir="false" />
@@ -51,25 +43,12 @@
       <change beforePath="$PROJECT_DIR$/include/object/Null.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Null.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Object.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/String.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/String.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/object/Value.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Value.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/parser/Lexer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/parser/Lexer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/parser/Token.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/parser/Token.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/BaseVisitor.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/BaseVisitor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/Expr/Expr.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Expr/Expr.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/tree/Expr/Identifier.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Expr/Identifier.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Node.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/Stmt/ClassDecl.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Stmt/ClassDecl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/vm/BaseVM.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/vm/Disasm.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/vm/VM.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/vm/Value.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Jacy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jacy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compiler/Compiler.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Lexer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Lexer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vm/BaseVM.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vm/Disasm.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vm/VM.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vm/Value.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/tree/Stmt/FuncDecl.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Stmt/FuncDecl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/tree/nodes.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/nodes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +73,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -103,12 +83,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -128,7 +108,8 @@
       <option name="presentableId" value="Default" />
       <updated>1602263600901</updated>
       <workItem from="1602263603476" duration="18000" />
-      <workItem from="1602263645246" duration="9857000" />
+      <workItem from="1602263645246" duration="12856000" />
+      <workItem from="1602331316146" duration="5791000" />
     </task>
     <servers />
   </component>
@@ -145,19 +126,28 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="781" y="170" key="SettingsEditor" timestamp="1602275360836">
+    <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602338652283">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="781" y="170" key="SettingsEditor/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602275360836" />
-    <state x="936" y="243" key="run.anything.popup" timestamp="1602273626762">
+    <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602338652283" />
+    <state x="92" y="92" width="2376" height="866" key="DiffContextDialog" timestamp="1602276940850">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="936" y="243" key="run.anything.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602273626762" />
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602275376865">
+    <state x="92" y="92" width="2376" height="866" key="DiffContextDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602276940850" />
+    <state x="781" y="170" key="SettingsEditor" timestamp="1602276614741">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602275376865" />
+    <state x="781" y="170" key="SettingsEditor/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602276614741" />
+    <state x="936" y="243" key="run.anything.popup" timestamp="1602277279687">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="936" y="243" key="run.anything.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602277279687" />
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602338800635">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602338800635" />
   </component>
 </project>

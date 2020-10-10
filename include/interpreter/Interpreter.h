@@ -2,8 +2,8 @@
 #define INTERPRETER_H
 
 #include "tree/BaseVisitor.h"
-#include "Exception.h"
 #include "tree/nodes.h"
+#include "Exception.h"
 #include "interpreter/Scope.h"
 #include "object/objects.h"
 
@@ -12,9 +12,11 @@ public:
     Interpreter();
     ~Interpreter() override = default;
 
+    void interpret(const StmtList & tree);
+
 private:
     // Value //
-    Value value;
+    obj_ptr value;
 
     // Scope //
     scope_ptr scope;

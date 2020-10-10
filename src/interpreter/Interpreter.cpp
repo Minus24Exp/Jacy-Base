@@ -1,6 +1,15 @@
 #include "interpreter/Interpreter.h"
 
-Interpreter::Interpreter() {}
+Interpreter::Interpreter() {
+    enter_scope();
+}
+
+void Interpreter::interpret(const StmtList & tree) {
+    for (const auto & stmt : tree) {
+        stmt->accept(*this);
+    }
+    exit_scope();
+}
 
 // Scope //
 void Interpreter::enter_scope() {
@@ -23,11 +32,49 @@ void Interpreter::visit(Block * block) {
 }
 
 void Interpreter::visit(VarDecl * var_decl) {
+    if (scope->has(var_decl->id->get_name())) {
+        error(var_decl->id->get_name() + " is already defined", var_decl);
+        return;
+    }
 
+    value = nullptr;
+    if (var_decl->assign_expr) {
+        var_decl->assign_expr->accept(*this);
+    }
+    scope->add(var_decl->id->get_name(), Local{var_decl->kind, value});
 }
 
 void Interpreter::visit(FuncDecl * func_decl) {
+    const auto & name = func_decl->id->get_name();
+    LocalPack funcs = scope->resolve_local(name);
+    if (funcs.empty()) {
+        error(name + " is not declared in this scope", func_decl->id.get());
+    }
 
+    for (const auto & func : funcs) {
+        if (func.obj->type != ObjType::Func) {
+            error(name + " is already defined in this scope", func_decl->id.get());
+            return;
+        }
+
+        // TODO: Add type signature
+        if (cast_to_f(func.obj)->argc() == func_decl->params.size()) {
+            error("Function with same signature is already declared in this scope", func_decl->id.get());
+            return;
+        }
+    }
+
+    ParamList params;
+    for (const auto & param : func_decl->params) {
+        obj_ptr default_val = nullptr;
+        if (param.default_val) {
+            param.default_val->accept(*this);
+            default_val = value;
+        }
+        params.push_back(Param{param.id->get_name(), default_val});
+    }
+
+    scope->add(name, Local{VarDeclKind::Val, std::make_shared<Func>(params, func_decl->body, scope)});
 }
 
 void Interpreter::visit(ReturnStmt * return_stmt) {
@@ -60,23 +107,23 @@ void Interpreter::visit(TypeDecl * type_decl) {
 void Interpreter::visit(Literal * literal) {
     switch (literal->token.type) {
         case TokenType::Null: {
-            value = Value{ObjType::Null, NullConst};
+            value = NullConst;
         } break;
         case TokenType::Bool: {
             if (literal->token.Bool()) {
-                value = Value{ObjType::Bool, TrueConst};
+                value = TrueConst;
             } else {
-                value = Value{ObjType::Bool, FalseConst};
+                value = FalseConst;
             }
         } break;
         case TokenType::Int: {
-            value = Value{ObjType::Int, make_int(literal->token.Int())};
+            value = make_int(literal->token.Int());
         } break;
         case TokenType::Float: {
-            value = Value{ObjType::Float, make_float(literal->token.Float())};
+            value = make_float(literal->token.Float());
         } break;
         case TokenType::String: {
-            value = Value{ObjType::String, make_string(literal->token.String())};
+            value = make_string(literal->token.String());
         } break;
         default: {
             throw DevError("Unexpected type of literal token");
@@ -87,14 +134,19 @@ void Interpreter::visit(Literal * literal) {
 // Important: visit(Identifier) gets first found local
 // It's not for functions (functions could be overridden)
 void Interpreter::visit(Identifier * id) {
-    const auto & found = scope->locals.find(id->get_name());
+    const auto & name = id->get_name();
+    const auto & found = scope->locals.find(name);
 
     if (found->second.empty()) {
-        error(id->get_name() + " is not defined", id);
+        error(name + " is not declared in this scope", id);
         return;
     }
 
-    value = found->second.at(0).val;
+    value = found->second.at(0).obj;
+
+    if (!value) {
+        error(name + " is undefined", id);
+    }
 }
 
 void Interpreter::visit(Infix * infix) {
@@ -106,7 +158,17 @@ void Interpreter::visit(Prefix * prefix) {
 }
 
 void Interpreter::visit(Assign * assign) {
-
+    const auto & name = assign->id->get_name();
+    if (!scope->has(name)) {
+        error(name + " is not defined", assign->id.get());
+    }
+    const Local & local = scope->resolve_local(name)[0];
+    // If found local is `val` and was assigned
+    if (local.kind == VarDeclKind::Val && local.obj) {
+        error(name + " is val and cannot be reassigned", assign->id.get());
+    }
+    assign->value->accept(*this);
+    scope->assign(name, value);
 }
 
 void Interpreter::visit(SetExpr * set_expr) {

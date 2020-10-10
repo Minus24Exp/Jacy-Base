@@ -10,6 +10,8 @@ extern class_ptr cFloat;
 
 class Float : public Object {
 public:
+    ObjType type = ObjType::Float;
+
     explicit Float(double value) : Object(cFloat), value(value) {}
     ~Float() override = default;
 

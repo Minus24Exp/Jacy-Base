@@ -7,6 +7,8 @@ extern class_ptr cBool;
 
 class Bool : public Object {
 public:
+    ObjType type = ObjType::Bool;
+
     explicit Bool(bool value) : Object(cBool), value(value) {}
     ~Bool() override = default;
 
