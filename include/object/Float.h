@@ -6,13 +6,13 @@
 class Float;
 using float_ptr = std::shared_ptr<Float>;
 
-extern class_ptr cFloat;
+class_ptr get_cFloat();
 
 class Float : public Object {
 public:
     ObjType type = ObjType::Float;
 
-    explicit Float(double value) : Object(cFloat), value(value) {}
+    explicit Float(double value) : Object(get_cFloat()), value(value) {}
     ~Float() override = default;
 
 private:

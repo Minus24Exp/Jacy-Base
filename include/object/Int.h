@@ -6,13 +6,13 @@
 class Int;
 using int_ptr = std::shared_ptr<Int>;
 
-extern class_ptr cInt;
+class_ptr get_cInt();
 
 class Int : public Object {
 public:
     ObjType type = ObjType::Int;
 
-    explicit Int(long long value) : Object(cInt), value(value) {}
+    explicit Int(long long value) : Object(get_cInt()), value(value) {}
     ~Int() override = default;
 
 private:

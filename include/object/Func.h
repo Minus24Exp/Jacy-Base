@@ -6,7 +6,7 @@
 class Func;
 using func_ptr = std::shared_ptr<Func>;
 
-extern class_ptr cFunc;
+class_ptr get_cFunc();
 
 struct Param {
     std::string name;
@@ -22,7 +22,7 @@ public:
     ObjType type = ObjType::Func;
 
     Func(ParamList params, block_ptr body, scope_ptr closure)
-        : Object(cFunc), params(std::move(params)), body(std::move(body)), closure(closure) {}
+        : Object(get_cFunc()), params(std::move(params)), body(std::move(body)), closure(closure) {}
     ~Func() override = default;
 
     std::size_t argc() {

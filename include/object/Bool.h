@@ -3,13 +3,13 @@
 
 #include "object/Object.h"
 
-extern class_ptr cBool;
+class_ptr get_cBool();
 
 class Bool : public Object {
 public:
     ObjType type = ObjType::Bool;
 
-    explicit Bool(bool value) : Object(cBool), value(value) {}
+    explicit Bool(bool value) : Object(get_cBool()), value(value) {}
     ~Bool() override = default;
 
 private:

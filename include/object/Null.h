@@ -3,13 +3,13 @@
 
 #include "object/Object.h"
 
-extern class_ptr cNull;
+class_ptr get_cNull();
 
 class Null : public Object {
 public:
     ObjType type = ObjType::Null;
 
-    Null() : Object(cNull) {}
+    Null() : Object(get_cNull()) {}
     ~Null() override = default;
 
 private:

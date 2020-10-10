@@ -7,13 +7,13 @@
 class String;
 using string_ptr = std::shared_ptr<String>;
 
-extern class_ptr cString;
+class_ptr get_cString();
 
 class String : public Object {
 public:
     ObjType type = ObjType::String;
 
-    explicit String(std::string value) : Object(cString), value(std::move(value)) {}
+    explicit String(std::string value) : Object(get_cString()), value(std::move(value)) {}
     ~String() override = default;
 
 private:

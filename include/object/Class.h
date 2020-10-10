@@ -3,11 +3,11 @@
 
 #include "object/Object.h"
 
-extern class_ptr cClass;
+class_ptr get_cClass();
 
 class Class : public Object {
 public:
-    Class() : Object(cClass) {}
+    Class() : Object(get_cClass()) {}
     ~Class() override = default;
 
 private:

@@ -7,13 +7,13 @@
 class Class;
 using class_ptr = std::shared_ptr<Class>;
 
-extern class_ptr cObject;
+class_ptr get_cObject();
 
 class Object {
 public:
     ObjType type = ObjType::Object;
 
-    Object(class_ptr _class) : _class(_class) {}
+    Object(class_ptr _class = get_cObject()) : _class(_class) {}
     virtual ~Object() = default;
 
 private:

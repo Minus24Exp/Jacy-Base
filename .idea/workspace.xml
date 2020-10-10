@@ -23,32 +23,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/object/Class.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Bool.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Class.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/Object.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/String.cpp" afterDir="false" />
+    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Save">
+      <change afterPath="$PROJECT_DIR$/src/object/Func.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/interpreter/Interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Interpreter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/interpreter/Scope.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Scope.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Bool.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Bool.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/object/Class.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Class.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Float.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Float.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Func.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Int.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Int.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Null.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Null.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Object.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/String.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/String.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Value.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Value.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/Expr/Identifier.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Expr/Identifier.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/Stmt/FuncDecl.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Stmt/FuncDecl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/nodes.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/nodes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Bool.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Bool.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Class.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Float.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Object.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +100,16 @@
       <updated>1602263600901</updated>
       <workItem from="1602263603476" duration="18000" />
       <workItem from="1602263645246" duration="12856000" />
-      <workItem from="1602331316146" duration="5791000" />
+      <workItem from="1602331316146" duration="6690000" />
     </task>
+    <task id="LOCAL-00001" summary="Save">
+      <created>1602340548449</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602340548450</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +126,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Save" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602338652283">
@@ -145,9 +148,9 @@
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="936" y="243" key="run.anything.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602277279687" />
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602338800635">
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602341362502">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602338800635" />
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602341362502" />
   </component>
 </project>
