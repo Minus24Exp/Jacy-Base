@@ -1,40 +1,18 @@
 #ifndef FUNC_H
 #define FUNC_H
 
-#include "object/Object.h"
-#include "tree/Stmt/Block.h"
+#include "object/BaseFunc.h"
 
-class Func;
-using func_ptr = std::shared_ptr<Func>;
-
-class_ptr get_cFunc();
-void reg_cFunc(const scope_ptr & global);
-
-struct Param {
-    std::string name;
-    obj_ptr default_val;
-};
-
-using ParamList = std::vector<Param>;
-
-const auto cast_to_f = [](const obj_ptr & obj) { return std::static_pointer_cast<Func>(obj); };
-
-class Func : public Object {
+class Func : public BaseFunc {
 public:
-    ObjType type = ObjType::Func;
-
-    Func(ParamList params, block_ptr body, scope_ptr closure)
-        : Object(get_cFunc()), params(std::move(params)), body(std::move(body)), closure(closure) {}
+    Func(ParamList params, scope_ptr closure, block_ptr body)
+        : BaseFunc(std::move(params), closure), body(std::move(body)) {}
     ~Func() override = default;
 
-    std::size_t argc() {
-        return params.size();
-    }
+    obj_ptr call(Interpreter & ip) override;
 
 private:
-    ParamList params;
     block_ptr body;
-    scope_ptr closure;
 };
 
 #endif

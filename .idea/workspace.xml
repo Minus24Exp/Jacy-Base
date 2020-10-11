@@ -23,20 +23,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Register global classes">
-      <change afterPath="$PROJECT_DIR$/src/object/Null.cpp" afterDir="false" />
+    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Add null registration, update literal tables">
+      <change afterPath="$PROJECT_DIR$/include/object/BaseFunc.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/object/NativeFunc.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Jacy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Jacy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Float.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Float.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/interpreter/Interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Interpreter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/object/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Func.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Int.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Int.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/String.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/String.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/script.jc" beforeDir="false" afterPath="$PROJECT_DIR$/sample/script.jc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Jacy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jacy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Float.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/String.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/String.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/parser/Parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/parser/Parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +67,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-debug sample/script.jc" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-debug sample/script.jc" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -97,7 +93,8 @@
       <updated>1602263600901</updated>
       <workItem from="1602263603476" duration="18000" />
       <workItem from="1602263645246" duration="12856000" />
-      <workItem from="1602331316146" duration="10713000" />
+      <workItem from="1602331316146" duration="21267000" />
+      <workItem from="1602419777571" duration="619000" />
     </task>
     <task id="LOCAL-00001" summary="Save">
       <created>1602340548449</created>
@@ -120,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602343363008</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add null registration, update literal tables">
+      <created>1602346760652</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602346760652</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +146,8 @@
     <MESSAGE value="Save" />
     <MESSAGE value="Using static getters for classes" />
     <MESSAGE value="Register global classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register global classes" />
+    <MESSAGE value="Add null registration, update literal tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add null registration, update literal tables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="734" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602345930424">
@@ -181,13 +186,13 @@
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="872" y="254" key="Vcs.Push.Dialog.v2/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602341454945" />
-    <state x="936" y="243" key="run.anything.popup" timestamp="1602277279687">
+    <state x="936" y="243" key="run.anything.popup" timestamp="1602367253897">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="936" y="243" key="run.anything.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602277279687" />
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602345828585">
+    <state x="936" y="243" key="run.anything.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602367253897" />
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1602362722523">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602345828585" />
+    <state x="943" y="227" width="672" height="678" key="search.everywhere.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602362722523" />
   </component>
 </project>

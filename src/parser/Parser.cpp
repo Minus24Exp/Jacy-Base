@@ -271,6 +271,15 @@ stmt_ptr Parser::parse_func_decl() {
             }
             id_ptr param_id = parse_id();
 
+            // Find duplicates
+            // TODO: Think about checking after all parameters added
+            for (const auto & param : params) {
+                if (param.id->get_name() == param_id->get_name()) {
+                    error("Parameter duplication");
+                    return nullptr;
+                }
+            }
+
             // Check for default value
             expr_ptr default_val = nullptr;
             if (is_op(Operator::Assign)) {
@@ -823,7 +832,7 @@ id_ptr Parser::parse_id() {
 
 
 // FuncCall //
-expr_ptr Parser::parse_func_call(expr_ptr left) {
+expr_ptr Parser::parse_func_call(const expr_ptr & left) {
     skip_op(Operator::LParen, false, true);
 
     ExprList args;

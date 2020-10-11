@@ -88,7 +88,7 @@ private:
     //
 
     id_ptr parse_id();
-    expr_ptr parse_func_call(expr_ptr left);
+    expr_ptr parse_func_call(const expr_ptr & left);
     expr_ptr parse_if_expr();
     expr_ptr parse_literal();
 

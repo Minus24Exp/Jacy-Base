@@ -20,7 +20,7 @@ private:
 
     // Scope //
     scope_ptr scope;
-    void enter_scope();
+    void enter_scope(scope_ptr nested = nullptr);
     void exit_scope();
 
 public:

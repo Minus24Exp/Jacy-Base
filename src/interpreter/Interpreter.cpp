@@ -22,8 +22,12 @@ void Interpreter::interpret(const StmtList & tree) {
 }
 
 // Scope //
-void Interpreter::enter_scope() {
-    scope = std::make_shared<Scope>(scope);
+void Interpreter::enter_scope(scope_ptr nested) {
+    if (nested) {
+        scope = nested;
+    } else {
+        scope = std::make_shared<Scope>(scope);
+    }
 }
 
 void Interpreter::exit_scope() {
@@ -190,7 +194,29 @@ void Interpreter::visit(GetExpr * get_expr) {
 }
 
 void Interpreter::visit(FuncCall * func_call) {
-    enter_scope();
+    func_call->left->accept(*this);
+    if (value->type != ObjType::Func) {
+        error("Is not a function", func_call);
+    }
+    func_ptr func = cast_to_f(value);
+
+    const auto & required_argc = std::count_if(func->params.begin(), func->params.end(), [](const auto & param) {
+        return !param.default_val;
+    });
+
+    if (func_call->args.size() < required_argc || func_call->args.size() > func->params.size()) {
+        error("Unexpected count of arguments (at least "+ std::to_string(required_argc)
+            +" expected, maximum: "+ std::to_string(func->params.size()) +")", func_call);
+    }
+
+    enter_scope(func->closure);
+
+    for (std::size_t arg_n = 0; arg_n < func->params.size(); arg_n++) {
+        const auto & arg = func_call->args[arg_n];
+        arg->accept(*this);
+        scope->add(func->params[arg_n].name, Local{VarDeclKind::Val, value});
+    }
+
     exit_scope();
 }
 
