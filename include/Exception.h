@@ -6,8 +6,6 @@
 #include "parser/Token.h"
 #include "tree/Node.h"
 
-const int RECURSION_DEPTH_LIMIT = 1000;
-
 /**
  * @brief The base class of all exceptions in Jacy 
  * @details All other exceptions count as "Uncaught"
@@ -126,12 +124,12 @@ public:
  * @param pos Position where error occured
  * @param in_file File where error occured
  */
-class RecursionDepthExceeded : public RuntimeException {
-public:
-    RecursionDepthExceeded(const Position & pos, const std::string & in_file)
-        : RuntimeException("Maximum recursion depth exceeded ("+
-                           std::to_string(RECURSION_DEPTH_LIMIT) +")", pos, in_file) {}
-};
+//class RecursionDepthExceeded : public RuntimeException {
+//public:
+//    RecursionDepthExceeded(const Position & pos, const std::string & in_file)
+//        : RuntimeException("Maximum recursion depth exceeded ("+
+//                           std::to_string(RECURSION_DEPTH_LIMIT) +")", pos, in_file) {}
+//};
 
 //////////////////////
 // Other Exceptions //

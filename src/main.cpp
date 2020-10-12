@@ -14,6 +14,7 @@ void signal_handler(int signal_num) {
 
 int main(int argc, const char * argv[]) {
     #if IS_WIN
+    std::cout << "WINDOWS" << std::endl;
     signal(SIGSEGV, signal_handler);
     signal(SIGINT, signal_handler);
     #endif

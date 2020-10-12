@@ -5,6 +5,7 @@ Interpreter::Interpreter() {
     enter_scope();
 
     // Register common classes in global scope
+    reg_global_functions(scope);
     reg_cNull(scope);
     reg_cBool(scope);
     reg_cInt(scope);
@@ -55,28 +56,15 @@ void Interpreter::visit(VarDecl * var_decl) {
     if (var_decl->assign_expr) {
         var_decl->assign_expr->accept(*this);
     }
-    scope->add(var_decl->id->get_name(), Local{var_decl->kind, value});
+    try {
+        scope->define(var_decl->id->get_name(), Local{var_decl->kind, value});
+    } catch (JacyException & je) {
+        error(je.what(), var_decl);
+    }
 }
 
 void Interpreter::visit(FuncDecl * func_decl) {
     const auto & name = func_decl->id->get_name();
-    LocalPack funcs = scope->resolve_local(name);
-    if (funcs.empty()) {
-        error(name + " is not declared in this scope", func_decl->id.get());
-    }
-
-    for (const auto & func : funcs) {
-        if (func.obj->type != ObjType::Func) {
-            error(name + " is already defined in this scope", func_decl->id.get());
-            return;
-        }
-
-        // TODO: Add type signature
-        if (cast_to_f(func.obj)->argc() == func_decl->params.size()) {
-            error("Function with same signature is already declared in this scope", func_decl->id.get());
-            return;
-        }
-    }
 
     ParamList params;
     for (const auto & param : func_decl->params) {
@@ -88,11 +76,16 @@ void Interpreter::visit(FuncDecl * func_decl) {
         params.push_back(Param{param.id->get_name(), default_val});
     }
 
-    scope->add(name, Local{VarDeclKind::Val, std::make_shared<Func>(params, func_decl->body, scope)});
+    try {
+        scope->define(name, Local{VarDeclKind::Val, std::make_shared<Func>(params, scope, func_decl->body)});
+    } catch (JacyException & je) {
+        error(je.what(), func_decl);
+    }
 }
 
 void Interpreter::visit(ReturnStmt * return_stmt) {
-
+    return_stmt->expr->accept(*this);
+    throw ReturnValue(value);
 }
 
 void Interpreter::visit(WhileStmt * while_stmt) {
@@ -148,18 +141,10 @@ void Interpreter::visit(Literal * literal) {
 // Important: visit(Identifier) gets first found local
 // It's not for functions (functions could be overridden)
 void Interpreter::visit(Identifier * id) {
-    const auto & name = id->get_name();
-    const auto & found = scope->locals.find(name);
-
-    if (found->second.empty()) {
-        error(name + " is not declared in this scope", id);
-        return;
-    }
-
-    value = found->second.at(0).obj;
-
-    if (!value) {
-        error(name + " is undefined", id);
+    try {
+        value = scope->get(id->get_name());
+    } catch (JacyException & je) {
+        error(je.what(), id);
     }
 }
 
@@ -176,13 +161,13 @@ void Interpreter::visit(Assign * assign) {
     if (!scope->has(name)) {
         error(name + " is not defined", assign->id.get());
     }
-    const Local & local = scope->resolve_local(name)[0];
-    // If found local is `val` and was assigned
-    if (local.kind == VarDeclKind::Val && local.obj) {
-        error(name + " is val and cannot be reassigned", assign->id.get());
-    }
     assign->value->accept(*this);
-    scope->assign(name, value);
+
+    try {
+        scope->set(name, value);
+    } catch (JacyException & je) {
+        error(je.what(), assign);
+    }
 }
 
 void Interpreter::visit(SetExpr * set_expr) {
@@ -211,10 +196,24 @@ void Interpreter::visit(FuncCall * func_call) {
 
     enter_scope(func->closure);
 
-    for (std::size_t arg_n = 0; arg_n < func->params.size(); arg_n++) {
+    ObjList args;
+    for (size_t arg_n = 0; arg_n < func->params.size(); arg_n++) {
         const auto & arg = func_call->args[arg_n];
         arg->accept(*this);
-        scope->add(func->params[arg_n].name, Local{VarDeclKind::Val, value});
+        args.push_back(value);
+    }
+
+    ArgsCmpResult comparison = func->cmp_args(args);
+    if (comparison == ArgsCmpResult::TooFew) {
+        error("Too few arguments in function call (minimum "+ std::to_string(func->required_argc()) +" expected)", func_call);
+    } else if(comparison == ArgsCmpResult::TooMany) {
+        error("Too many arguments in function call (maximum "+ std::to_string(func->argc()) +" expected)", func_call);
+    }
+
+    try {
+        value = func->call(*this, args);
+    } catch (JacyException & je) {
+        error(je.what(), func_call);
     }
 
     exit_scope();

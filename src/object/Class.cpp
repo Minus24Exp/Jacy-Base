@@ -1,4 +1,5 @@
 #include "object/Class.h"
+#include "interpreter/Scope.h"
 
 class_ptr get_cClass() {
     static class_ptr cClass = std::make_shared<Class>();
@@ -7,5 +8,5 @@ class_ptr get_cClass() {
 
 void reg_cClass(const scope_ptr & global) {
     const class_ptr & cClass = get_cClass();
-    global->add("Class", Local{VarDeclKind::Val, cClass});
+    global->define("Class", Local{VarDeclKind::Val, cClass});
 }

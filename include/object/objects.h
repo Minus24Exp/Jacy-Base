@@ -7,6 +7,7 @@
 #include "object/Float.h"
 #include "object/String.h"
 #include "object/Func.h"
+#include "object/NativeFunc.h"
 #include "object/Class.h"
 
 #endif

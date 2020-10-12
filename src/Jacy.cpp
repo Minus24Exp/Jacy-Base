@@ -24,7 +24,7 @@ void Jacy::launch(int argc, const char * argv[]) {
                     debug = true;
                 }
             } else {
-                script_argv.push_back(std::string(argv[i]));
+                script_argv.emplace_back(std::string(argv[i]));
             }
         } else {
             // Check if argument is Jacy file (ends with ".yo")

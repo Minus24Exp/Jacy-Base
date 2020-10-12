@@ -3,6 +3,7 @@
 
 #include "object/Object.h"
 #include "tree/Stmt/Block.h"
+#include "object/Callable.h"
 
 class Interpreter;
 
@@ -21,15 +22,21 @@ using ParamList = std::vector<Param>;
 
 const auto cast_to_f = [](const obj_ptr & obj) { return std::static_pointer_cast<BaseFunc>(obj); };
 
-class BaseFunc : public Object {
+class BaseFunc : public Object, public Callable {
 public:
     ObjType type = ObjType::Func;
 
-    BaseFunc(ParamList params, scope_ptr closure)
-        : Object(get_cFunc()), params(std::move(params)), closure(closure) {}
+    BaseFunc(ParamList params) : Object(get_cFunc()), params(std::move(params)) {}
     ~BaseFunc() override = default;
 
-    virtual obj_ptr call(Interpreter & ip, const std::vector<obj_ptr> & args) = 0;
+    size_t required_argc() const override {
+        return std::count_if(params.begin(), params.end(), [](const auto & param){
+            return !param.default_val;
+        });
+    }
+    size_t argc() const override { return params.size(); }
+
+    virtual obj_ptr call(Interpreter & ip, const ObjList & args) = 0;
 
     ParamList params;
     scope_ptr closure;

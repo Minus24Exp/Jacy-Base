@@ -6,6 +6,7 @@
 #include "Exception.h"
 #include "interpreter/Scope.h"
 #include "object/objects.h"
+#include "lib/functions.h"
 
 class Interpreter : public BaseVisitor {
 public:
@@ -17,13 +18,16 @@ public:
 private:
     // Value //
     obj_ptr value;
+public:
+    obj_ptr get_value() const { return value; }
 
     // Scope //
     scope_ptr scope;
+public:
+    scope_ptr get_scope() const { return scope; }
     void enter_scope(scope_ptr nested = nullptr);
     void exit_scope();
 
-public:
     // Statements //
     void visit(ExprStmt * expr_stmt) override;
     void visit(Block * block) override;

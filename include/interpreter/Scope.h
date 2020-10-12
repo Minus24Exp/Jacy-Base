@@ -3,8 +3,9 @@
 
 #include <utility>
 #include <vector>
+#include "Exception.h"
 #include "tree/Stmt/VarDecl.h"
-#include "object/Value.h"
+#include "object/Object.h"
 
 class Scope;
 using scope_ptr = std::shared_ptr<Scope>;
@@ -15,8 +16,7 @@ struct Local {
     obj_ptr obj;
 };
 
-using LocalPack = std::vector<Local>;
-using Locals = std::map<std::string, LocalPack>;
+using Locals = std::map<std::string, Local>;
 
 struct Scope {
     explicit Scope(scope_ptr enclosing) : enclosing(std::move(enclosing)) {}
@@ -24,28 +24,40 @@ struct Scope {
 
     bool has(const std::string & name) {
         const auto & found = locals.find(name);
-        return found != locals.end() && !found->second.empty();
+        return found != locals.end();
     }
 
-    void add(const std::string & name, const Local & local) {
-        locals[name].push_back(local);
+    void define(const std::string & name, const Local & local) {
+        if (has(name)) {
+            throw JacyException(name +" has beed already declared in this scope");
+        }
+        locals.emplace(name, local);
     }
 
-    void assign(const std::string & name, const obj_ptr & val) {
-        // As far as `val`-kind variables cannot be reassigned, make it `var`
-        // It must be handled by Interpreter
-        locals[name] = {{VarDeclKind::Var, val}};
-    }
-
-    LocalPack resolve_local(const std::string & name) {
+    void set(const std::string & name, const obj_ptr & value) {
         const auto & found = locals.find(name);
-        if (found != locals.end()) {
-            return found->second;
+        if (found == locals.end()) {
+            if (enclosing) {
+                return enclosing->set(name, value);
+            } else {
+                throw JacyException(name +" is not declared in this scope");
+            }
+        }
+        if (found->second.kind == VarDeclKind::Val && found->second.obj) {
+            throw JacyException("Unable to reassign val "+ name);
+        }
+        locals[name].obj = value;
+    }
+
+    obj_ptr get(const std::string & name) {
+        const auto & found = locals.find(name);
+        if (has(name)) {
+            return found->second.obj;
         }
         if (enclosing) {
-            return enclosing->resolve_local(name);
+            return enclosing->get(name);
         }
-        return {};
+        throw JacyException(name +" is not declared in this scope");
     }
 
     scope_ptr enclosing;
