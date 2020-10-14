@@ -20,38 +20,20 @@
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug-Coverage" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="BaseFunc">
-      <change afterPath="$PROJECT_DIR$/include/lib/functions.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/object/Callable.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/functions.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/NativeFunc.cpp" afterDir="false" />
+    <list default="true" id="79848754-5697-4054-aa88-59ac59765173" name="Default Changelist" comment="Globals registration, Function objects structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Exception.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Exception.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/interpreter/Interpreter.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Interpreter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/interpreter/Scope.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/interpreter/Scope.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/BaseFunc.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/BaseFunc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Func.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Func.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/NativeFunc.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/NativeFunc.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/Object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/Value.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/object/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/object/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tree/Stmt/ReturnStmt.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tree/Stmt/ReturnStmt.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/script.jc" beforeDir="false" afterPath="$PROJECT_DIR$/sample/script.jc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Jacy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Jacy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Tester.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jacy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/jacy.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Jacy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Jacy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/interpreter/Interpreter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tester.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Bool.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Bool.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Class.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Class.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Float.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Float.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/Func.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Func.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Int.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Int.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Null.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Null.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/Object.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/String.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/String.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +58,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jacy.sh" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -87,7 +71,7 @@
       <recent name="F:\Projects\Jacy\Jacy-Base\include\interpreter" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="CMake Application.Jacy">
     <configuration name="Jacy" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-debug sample/script.jc" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Jacy" TARGET_NAME="Jacy" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Jacy" RUN_TARGET_NAME="Jacy">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -103,6 +87,21 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JacySH" type="ShConfigurationType">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/jacy.sh" />
+      <option name="SCRIPT_OPTIONS" value="r -debug sample/script.jc" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Jacy" />
+      <item itemvalue="Shell Script.JacySH" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -115,7 +114,10 @@
       <workItem from="1602263603476" duration="18000" />
       <workItem from="1602263645246" duration="12856000" />
       <workItem from="1602331316146" duration="21267000" />
-      <workItem from="1602419777571" duration="23922000" />
+      <workItem from="1602419777571" duration="24241000" />
+      <workItem from="1602611217201" duration="5000" />
+      <workItem from="1602611242478" duration="5517000" />
+      <workItem from="1602699147724" duration="4340000" />
     </task>
     <task id="LOCAL-00001" summary="Save">
       <created>1602340548449</created>
@@ -176,53 +178,82 @@
     <MESSAGE value="Register global classes" />
     <MESSAGE value="Add null registration, update literal tables" />
     <MESSAGE value="BaseFunc" />
-    <option name="LAST_COMMIT_MESSAGE" value="BaseFunc" />
+    <MESSAGE value="Globals registration, Function objects structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Globals registration, Function objects structure" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602345930424">
+    <state x="734" y="180" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602618009747">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="734" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602345930424" />
-    <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602338652283">
+    <state x="734" y="180" width="1092" height="762" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602618009747" />
+    <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602616728250">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602338652283" />
-    <state x="1010" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602449249794">
+    <state x="1044" y="315" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602616728250" />
+    <state x="1010" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602704912631">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="1010" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602449249794" />
+    <state x="1010" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602704912631" />
+    <state x="1023" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602704728784">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="1023" y="360" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602704728784" />
     <state x="92" y="92" width="2376" height="866" key="DiffContextDialog" timestamp="1602276940850">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="92" y="92" width="2376" height="866" key="DiffContextDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602276940850" />
-    <state width="2517" height="209" key="GridCell.Tab.0.bottom" timestamp="1602535667918">
+    <state x="1145" y="188" key="EnvironmentVariablesDialog" timestamp="1602616064254">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state width="2517" height="209" key="GridCell.Tab.0.bottom/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602535667918" />
-    <state width="2517" height="209" key="GridCell.Tab.0.center" timestamp="1602535667918">
+    <state x="1145" y="188" key="EnvironmentVariablesDialog/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602616064253" />
+    <state x="1060" y="292" key="FileChooserDialogImpl" timestamp="1602617941277">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state width="2517" height="209" key="GridCell.Tab.0.center/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602535667918" />
-    <state width="2517" height="209" key="GridCell.Tab.0.left" timestamp="1602535667918">
+    <state x="1060" y="292" key="FileChooserDialogImpl/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602617941277" />
+    <state width="2517" height="209" key="GridCell.Tab.0.bottom" timestamp="1602620283202">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state width="2517" height="209" key="GridCell.Tab.0.left/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602535667918" />
-    <state width="2517" height="209" key="GridCell.Tab.0.right" timestamp="1602535667918">
+    <state width="2517" height="209" key="GridCell.Tab.0.bottom/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602620283202" />
+    <state width="2517" height="209" key="GridCell.Tab.0.center" timestamp="1602620283201">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state width="2517" height="209" key="GridCell.Tab.0.right/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602535667918" />
-    <state x="781" y="170" key="SettingsEditor" timestamp="1602276614741">
+    <state width="2517" height="209" key="GridCell.Tab.0.center/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602620283201" />
+    <state width="2517" height="209" key="GridCell.Tab.0.left" timestamp="1602620283201">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="781" y="170" key="SettingsEditor/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602276614741" />
+    <state width="2517" height="209" key="GridCell.Tab.0.left/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602620283201" />
+    <state width="2517" height="209" key="GridCell.Tab.0.right" timestamp="1602620283202">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="209" key="GridCell.Tab.0.right/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602620283202" />
+    <state width="2517" height="344" key="GridCell.Tab.1.bottom" timestamp="1602617117927">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="344" key="GridCell.Tab.1.bottom/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602617117927" />
+    <state width="2517" height="344" key="GridCell.Tab.1.center" timestamp="1602617117926">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="344" key="GridCell.Tab.1.center/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602617117926" />
+    <state width="2517" height="344" key="GridCell.Tab.1.left" timestamp="1602617117926">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="344" key="GridCell.Tab.1.left/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602617117926" />
+    <state width="2517" height="344" key="GridCell.Tab.1.right" timestamp="1602617117926">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state width="2517" height="344" key="GridCell.Tab.1.right/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602617117926" />
+    <state x="781" y="170" key="SettingsEditor" timestamp="1602616973451">
+      <screen x="0" y="0" width="2560" height="1050" />
+    </state>
+    <state x="781" y="170" key="SettingsEditor/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602616973451" />
     <state x="872" y="254" key="Vcs.Push.Dialog.v2" timestamp="1602341454945">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
     <state x="872" y="254" key="Vcs.Push.Dialog.v2/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602341454945" />
-    <state x="988" y="242" width="583" height="624" key="find.popup" timestamp="1602524723225">
+    <state x="988" y="242" width="583" height="624" key="find.popup" timestamp="1602704935263">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>
-    <state x="988" y="242" width="583" height="624" key="find.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602524723225" />
+    <state x="988" y="242" width="583" height="624" key="find.popup/0.0.2560.1050/2560.0.1280.994@0.0.2560.1050" timestamp="1602704935263" />
     <state x="936" y="243" key="run.anything.popup" timestamp="1602367253897">
       <screen x="0" y="0" width="2560" height="1050" />
     </state>

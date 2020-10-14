@@ -7,7 +7,7 @@ Jacy::Jacy()
     debug = false;
 }
 
-void Jacy::launch(int argc, const char * argv[]) {    
+void Jacy::launch(int argc, const char * argv[]) {
     // Parse argv
 
     // jacy_args -> false when main file appears

@@ -11,7 +11,7 @@ green_ansi='\u001b[32m'
 underline_ansi='\e[4m'
 
 cpp="g++"
-debug_flags="-Og -ggdb"
+debug_flags="-Og -ggdb -Wall -Wno-switch"
 max_errors="1"
 ld_flags="-Iinclude"
 
