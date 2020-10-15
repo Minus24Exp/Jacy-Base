@@ -3,21 +3,21 @@
 
 #include "object/Object.h"
 
-class_ptr get_cBool();
+extern class_ptr cBool;
 void reg_cBool(const scope_ptr & global);
 
 class Bool : public Object {
 public:
     ObjType type = ObjType::Bool;
 
-    explicit Bool(bool value) : Object(get_cBool()), value(value) {}
+    explicit Bool(bool value) : Object(cBool, ObjType::Bool), value(value) {}
     ~Bool() override = default;
 
 private:
     bool value;
 };
 
-const std::shared_ptr<Bool> FalseConst = std::make_shared<Bool>(false);
-const std::shared_ptr<Bool> TrueConst = std::make_shared<Bool>(true);
+extern std::shared_ptr<Bool> FalseConst;
+extern std::shared_ptr<Bool> TrueConst;
 
 #endif

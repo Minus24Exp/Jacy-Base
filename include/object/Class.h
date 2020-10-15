@@ -3,12 +3,14 @@
 
 #include "object/Object.h"
 
-class_ptr get_cClass();
+extern class_ptr cClass;
 void reg_cClass(const scope_ptr & global);
 
 class Class : public Object {
 public:
-    Class() : Object(get_cClass()) {}
+    ObjType type = ObjType::Class;
+
+    Class() : Object(cClass, ObjType::Class) {}
     ~Class() override = default;
 
 private:

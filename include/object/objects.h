@@ -9,5 +9,6 @@
 #include "object/Func.h"
 #include "object/NativeFunc.h"
 #include "object/Class.h"
+#include "object/Object.h"
 
 #endif

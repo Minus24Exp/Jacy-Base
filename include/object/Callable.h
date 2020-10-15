@@ -28,7 +28,7 @@ public:
     virtual size_t required_argc() const = 0;
     virtual size_t argc() const = 0;
 
-    virtual ArgsCmpResult cmp_args(const ObjList & args) const {
+    ArgsCmpResult cmp_args(const ObjList & args) const {
         if(args.size() < required_argc()){
             return ArgsCmpResult::TooFew;
         }

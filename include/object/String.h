@@ -7,14 +7,14 @@
 class String;
 using string_ptr = std::shared_ptr<String>;
 
-class_ptr get_cString();
+extern class_ptr cString;
 void reg_cString(const scope_ptr & global);
 
 class String : public Object {
 public:
     ObjType type = ObjType::String;
 
-    explicit String(std::string value) : Object(get_cString()), value(std::move(value)) {}
+    explicit String(std::string value) : Object(cString, ObjType::String), value(std::move(value)) {}
     ~String() override = default;
 
 private:
@@ -22,7 +22,6 @@ private:
 };
 
 // Constants //
-extern std::map<std::string, string_ptr> string_constants;
 string_ptr make_string(const std::string & value);
 
 #endif

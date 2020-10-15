@@ -9,23 +9,12 @@
 
 class Lexer {
 public:
-    static Lexer & get_instance() {
-        static Lexer instance;
-        return instance;
-    }
-
-    Lexer(const Lexer&) = delete;
-    Lexer(Lexer&&) = delete;
-    Lexer & operator=(const Lexer&) = delete;
-    Lexer & operator=(Lexer&&) = delete;
-
-private:
     Lexer();
-    ~Lexer() = default;
+    virtual ~Lexer() = default;
 
-public:
     TokenStream lex(const std::string & script);
 
+private:
     std::string script;
     TokenStream tokens;
 

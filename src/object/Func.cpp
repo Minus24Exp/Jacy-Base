@@ -2,16 +2,6 @@
 #include "object/Class.h"
 #include "interpreter/Interpreter.h"
 
-class_ptr get_cFunc() {
-    static class_ptr cFunc = std::make_shared<Class>();
-    return cFunc;
-}
-
-void reg_cFunc(const scope_ptr & global) {
-    const class_ptr & cFunc = get_cFunc();
-    global->define("Func", Local{VarDeclKind::Val, cFunc});
-}
-
 obj_ptr Func::call(Interpreter & ip, const ObjList & args) {
     scope_ptr previous = ip.get_scope();
     ip.enter_scope(std::make_shared<Scope>(closure));

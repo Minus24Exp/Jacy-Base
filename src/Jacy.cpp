@@ -1,11 +1,6 @@
 #include "Jacy.h"
 
-Jacy::Jacy()
-    : lexer(Lexer::get_instance()),
-      parser(Parser::get_instance())
-{
-    debug = false;
-}
+Jacy::Jacy() : debug(false) {}
 
 void Jacy::launch(int argc, const char * argv[]) {
     // Parse argv

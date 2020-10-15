@@ -21,28 +21,9 @@
  */
 class Jacy {
 public:
-    /**
-     * @return singleton instance of Jacy class
-     */
-    static Jacy & get_instance() {
-        static Jacy instance;
-        return instance;
-    }
-
-/*
- * Delete everything singleton must not have
- */
-public:
-    Jacy(const Jacy&)             = delete;
-    Jacy(Jacy&&)                  = delete;
-    Jacy & operator=(const Jacy&) = delete;
-    Jacy & operator=(Jacy&&)      = delete;
-
-private:
     Jacy();
-    ~Jacy() = default;
+    virtual ~Jacy() = default;
 
-public:
     /**
      * @brief Launch Jacy
      * 
@@ -58,8 +39,8 @@ private:
     // Debug mode state
     bool debug;
 
-    Lexer & lexer;
-    Parser & parser;
+    Lexer lexer;
+    Parser parser;
     Interpreter interpreter;
 
     /**

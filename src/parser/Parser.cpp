@@ -1,5 +1,7 @@
 #include "parser/Parser.h"
 
+Parser::Parser() {}
+
 Token Parser::peek() {
     return tokens[index];
 }

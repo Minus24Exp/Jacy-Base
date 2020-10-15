@@ -25,14 +25,14 @@ enum class ObjType {
     Class,
 };
 
-class_ptr get_cObject();
+extern class_ptr cObject;
 void reg_cObject(const scope_ptr & global);
 
 class Object {
 public:
-    ObjType type = ObjType::Object;
+    ObjType type;
 
-    explicit Object(class_ptr _class = get_cObject()) : _class(std::move(_class)) {}
+    explicit Object(class_ptr _class, ObjType type = ObjType::Object) : _class(std::move(_class)), type(type) {}
     virtual ~Object() = default;
 
 private:

@@ -7,19 +7,8 @@
 
 class Parser {
 public:
-    static Parser & get_instance() {
-        static Parser instance;
-        return instance;
-    }
-
-    Parser(const Parser&) = delete;
-    Parser(Parser&&) = delete;
-    Parser & operator=(const Parser&) = delete;
-    Parser & operator=(Parser&&) = delete;
-
-private:
-    Parser() = default;
-    ~Parser() = default;
+    Parser();
+    virtual ~Parser() = default;
 
 public:
     StmtList parse(const TokenStream & tokens);

@@ -8,4 +8,4 @@ project(Jacy VERSION 0.0.1)
 
 file(GLOB_RECURSE SOURCES src/**/*.cpp src/*.cpp)
 include_directories(include/)
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} src/object/BaseFunc.cpp)

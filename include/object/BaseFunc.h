@@ -6,11 +6,10 @@
 #include "object/Callable.h"
 
 class Interpreter;
-
 class BaseFunc;
 using func_ptr = std::shared_ptr<BaseFunc>;
 
-class_ptr get_cFunc();
+extern class_ptr cFunc;
 void reg_cFunc(const scope_ptr & global);
 
 struct Param {
@@ -26,7 +25,7 @@ class BaseFunc : public Object, public Callable {
 public:
     ObjType type = ObjType::Func;
 
-    BaseFunc(ParamList params) : Object(get_cFunc()), params(std::move(params)) {}
+    explicit BaseFunc(ParamList params) : Object(cFunc, ObjType::Func), params(std::move(params)) {}
     ~BaseFunc() override = default;
 
     size_t required_argc() const override {
@@ -36,7 +35,7 @@ public:
     }
     size_t argc() const override { return params.size(); }
 
-    virtual obj_ptr call(Interpreter & ip, const ObjList & args) = 0;
+    obj_ptr call(Interpreter & ip, const ObjList & args) override = 0;
 
     ParamList params;
     scope_ptr closure;

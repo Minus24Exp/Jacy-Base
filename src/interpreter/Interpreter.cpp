@@ -5,14 +5,15 @@ Interpreter::Interpreter() {
     enter_scope();
 
     // Register common classes in global scope
-    reg_global_functions(scope);
+    reg_cClass(scope);
+    reg_cObject(scope);
     reg_cNull(scope);
     reg_cBool(scope);
     reg_cInt(scope);
     reg_cFloat(scope);
     reg_cString(scope);
-    reg_cClass(scope);
     reg_cFunc(scope);
+    reg_global_functions(scope);
 }
 
 void Interpreter::interpret(const StmtList & tree) {
@@ -181,7 +182,7 @@ void Interpreter::visit(GetExpr * get_expr) {
 void Interpreter::visit(FuncCall * func_call) {
     func_call->left->accept(*this);
     if (value->type != ObjType::Func) {
-        error("Is not a function", func_call);
+        error("Expression is not a function", func_call);
     }
     func_ptr func = cast_to_f(value);
 

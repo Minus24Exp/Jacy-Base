@@ -3,19 +3,19 @@
 
 #include "object/Object.h"
 
-class_ptr get_cNull();
+extern class_ptr cNull;
 void reg_cNull(const scope_ptr & global);
 
 class Null : public Object {
 public:
     ObjType type = ObjType::Null;
 
-    Null() : Object(get_cNull()) {}
+    Null() : Object(cNull, ObjType::Null) {}
     ~Null() override = default;
 
 private:
 };
 
-const std::shared_ptr<Null> NullConst = std::make_shared<Null>();
+extern std::shared_ptr<Null> NullConst;
 
 #endif
