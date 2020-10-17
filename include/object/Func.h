@@ -14,7 +14,8 @@ public:
         : BaseFunc(std::move(params)), closure(closure), body(std::move(body)) {}
     ~Func() override = default;
 
-    obj_ptr call(Interpreter & ip, const ObjList & args) override;
+    obj_ptr call(const ObjList & args) override;
+    func_ptr bind(const obj_ptr & instance) override;
 
 private:
     scope_ptr closure;

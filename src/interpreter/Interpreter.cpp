@@ -176,7 +176,7 @@ void Interpreter::visit(SetExpr * set_expr) {
 }
 
 void Interpreter::visit(GetExpr * get_expr) {
-
+    // Dont forget about function binding
 }
 
 void Interpreter::visit(FuncCall * func_call) {
@@ -212,7 +212,7 @@ void Interpreter::visit(FuncCall * func_call) {
     }
 
     try {
-        value = func->call(*this, args);
+        value = func->call(args);
     } catch (JacyException & je) {
         error(je.what(), func_call);
     }

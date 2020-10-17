@@ -22,7 +22,7 @@
 class Jacy {
 public:
     Jacy();
-    virtual ~Jacy() = default;
+    ~Jacy() = default;
 
     /**
      * @brief Launch Jacy
@@ -41,7 +41,7 @@ private:
 
     Lexer lexer;
     Parser parser;
-    Interpreter interpreter;
+    Interpreter & ip;
 
     /**
      * @brief Run REPL

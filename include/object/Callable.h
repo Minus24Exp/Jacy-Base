@@ -40,7 +40,7 @@ public:
         return ArgsCmpResult::Ok;
     }
 
-    virtual obj_ptr call(Interpreter & ip, const ObjList & args) = 0;
+    virtual obj_ptr call(const ObjList & args) = 0;
 
 private:
     int recursion_depth = 0;

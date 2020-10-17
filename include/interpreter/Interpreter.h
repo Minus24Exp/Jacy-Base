@@ -10,12 +10,22 @@
 
 class Interpreter : public BaseVisitor {
 public:
-    Interpreter();
-    ~Interpreter() override = default;
+    static Interpreter & get_instance() {
+        static Interpreter instance;
+        return instance;
+    }
+
+    Interpreter(const Interpreter&) = delete;
+    Interpreter(Interpreter&&) = delete;
+    Interpreter & operator=(const Interpreter&) = delete;
+    Interpreter & operator=(Interpreter&&) = delete;
 
     void interpret(const StmtList & tree);
 
 private:
+    Interpreter();
+    ~Interpreter() override = default;
+
     // Value //
     obj_ptr value;
 public:

@@ -1,6 +1,6 @@
 #include "Jacy.h"
 
-Jacy::Jacy() : debug(false) {}
+Jacy::Jacy() : debug(false), ip(Interpreter::get_instance()) {}
 
 void Jacy::launch(int argc, const char * argv[]) {
     // Parse argv
@@ -121,7 +121,7 @@ void Jacy::run_debug(const std::string & script) {
 
     // Interpret
     auto ip_start = bench();
-    interpreter.interpret(tree);
+    ip.interpret(tree);
     auto ip_end = bench();
 
     std::cout << "\n\nBenchmarks:" << std::endl;

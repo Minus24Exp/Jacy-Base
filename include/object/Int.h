@@ -16,7 +16,6 @@ public:
     explicit Int(long long value) : Object(cInt, ObjType::Int), value(value) {}
     ~Int() override = default;
 
-private:
     long long value;
 };
 

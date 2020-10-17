@@ -13,7 +13,6 @@ public:
     explicit Bool(bool value) : Object(cBool, ObjType::Bool), value(value) {}
     ~Bool() override = default;
 
-private:
     bool value;
 };
 

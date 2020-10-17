@@ -4,19 +4,10 @@
 #include <utility>
 #include <vector>
 #include "Exception.h"
-#include "tree/Stmt/VarDecl.h"
 #include "object/Object.h"
 
 class Scope;
 using scope_ptr = std::shared_ptr<Scope>;
-
-struct Local {
-    // Type
-    VarDeclKind kind;
-    obj_ptr obj;
-};
-
-using Locals = std::map<std::string, Local>;
 
 struct Scope {
     explicit Scope(scope_ptr enclosing) : enclosing(std::move(enclosing)) {}

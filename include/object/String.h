@@ -10,6 +10,8 @@ using string_ptr = std::shared_ptr<String>;
 extern class_ptr cString;
 void reg_cString(const scope_ptr & global);
 
+const auto cast_to_s = [](const obj_ptr & obj) { return std::static_pointer_cast<String>(obj); };
+
 class String : public Object {
 public:
     ObjType type = ObjType::String;
@@ -17,7 +19,6 @@ public:
     explicit String(std::string value) : Object(cString, ObjType::String), value(std::move(value)) {}
     ~String() override = default;
 
-private:
     std::string value;
 };
 

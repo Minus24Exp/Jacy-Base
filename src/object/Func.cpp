@@ -2,7 +2,8 @@
 #include "object/Class.h"
 #include "interpreter/Interpreter.h"
 
-obj_ptr Func::call(Interpreter & ip, const ObjList & args) {
+obj_ptr Func::call(const ObjList & args) {
+    auto & ip = Interpreter::get_instance();
     scope_ptr previous = ip.get_scope();
     ip.enter_scope(std::make_shared<Scope>(closure));
 
@@ -27,4 +28,11 @@ obj_ptr Func::call(Interpreter & ip, const ObjList & args) {
     // Enter previous scope
     ip.enter_scope(previous);
     return value;
+}
+
+func_ptr Func::bind(const obj_ptr & instance) {
+    scope_ptr binded_closure = std::make_shared<Scope>(closure);
+    binded_closure->define("this", Local{VarDeclKind::Val, instance});
+    binded_closure->define("[virtual_this]", Local{VarDeclKind::Val, instance});
+    return std::make_shared<Func>(params, binded_closure, body);
 }

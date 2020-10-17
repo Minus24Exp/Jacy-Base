@@ -21,6 +21,8 @@ using ParamList = std::vector<Param>;
 
 const auto cast_to_f = [](const obj_ptr & obj) { return std::static_pointer_cast<BaseFunc>(obj); };
 
+func_ptr bind_method(const obj_ptr & instance, const obj_ptr & method);
+
 class BaseFunc : public Object, public Callable {
 public:
     ObjType type = ObjType::Func;
@@ -35,7 +37,8 @@ public:
     }
     size_t argc() const override { return params.size(); }
 
-    obj_ptr call(Interpreter & ip, const ObjList & args) override = 0;
+    obj_ptr call(const ObjList & args) override = 0;
+    virtual func_ptr bind(const obj_ptr & instance) = 0;
 
     ParamList params;
     scope_ptr closure;
